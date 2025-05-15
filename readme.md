@@ -1,84 +1,84 @@
-# JavaScript Değişkenleri: Kapsamlı Rehber
+JavaScript Değişkenleri: Kapsamlı Rehber
+JavaScript'te değişkenler verilerini depolamak ve yönetmek için kullandığın temel yapı taşlarıdır bunlar discord.js kütüphanesini kullanırken işine yaracak kardeş öyle işte
 
-JavaScript'te değişkenler, verilerinizi depolamak ve yönetmek için kullanılan temel yapı taşlarıdır. Bu yazıda JavaScript değişkenleri hakkında bilmeniz gereken tüm temel bilgileri paylaşacağım.
+Değişken Tanımlama
+JavaScript’te üç tane anahtar kelime var değişken tanımlamak için:
 
-## Değişken Tanımlama
+var: Eski usul geleneksel yöntem
 
-JavaScript'te değişkenleri tanımlamak için üç farklı anahtar kelime kullanılabilir:
+let: ES6 ile gelen blok içinde geçerli olan değişkenler
 
-- `var`: Geleneksel değişken tanımlama yöntemi  
-- `let`: ES6 (ECMAScript 2015) ile gelen, blok kapsamlı değişkenler için  
-- `const`: Değeri değiştirilemeyen (sabit) değişkenler için  
+const: Değeri değişmeyen sabit değişkenler
 
-```javascript
+javascript
+Kopyala
+Düzenle
 var yas = 25;
 let isim = "Ahmet";
 const PI = 3.14;
 Değişken İsimlendirme Kuralları
-Değişken isimleri harf, alt çizgi (_) veya dolar işareti ($) ile başlamalıdır
+İsimler harf, alt çizgi (_) veya dolar işareti ($) ile başlamalıdır
 
-Rakamla başlayamaz
+Rakamla başlayamazsın
 
-Türkçe karakterler kullanılabilir ancak önerilmez
+Türkçe karakter kullanabilirsin ama tavsiye edilmez
 
-JavaScript'in ayrılmış kelimeleri (if, for, while vb.) değişken ismi olarak kullanılamaz
+if, for, while gibi kelimeler değişken ismi olamaz
 
-Büyük-küçük harf duyarlıdır (isim ve İsim farklı değişkenlerdir)
+Büyük-küçük harf farkı var: isim ile İsim farklıdır
 
 Değişken Kapsamı (Scope)
-var ile Tanımlanan Değişkenler
-Fonksiyon kapsamına sahiptir
+var ile tanımlananlar:
 
-Tanımlandığı fonksiyon içinde erişilebilir
+Fonksiyon içinde geçerli
 
-Blok kapsamı yoktur (örneğin if, for, while blokları içinde tanımlansa bile dışarıdan erişilebilir)
+Blok içinde tanımlansa da blok dışından erişilebilir
 
-Değişken yükseltme (hoisting) özelliğine sahiptir
+Hoisting (yukarı çekilme) var, yani değişkeni tanımlamadan önce bile ulaşabilirsin (ama undefined olur)
 
-let ve const ile Tanımlanan Değişkenler
-Blok kapsamına sahiptir
+let ve const ile tanımlananlar:
 
-Sadece tanımlandıkları blok içinde erişilebilir
+Sadece tanımlandıkları blok içinde geçerli
 
-Değişken yükseltme özelliği yoktur (kullanmadan önce tanımlanmalıdır)
+Hoisting yok, önce tanımlaman lazım
 
 Değişken Türleri
-JavaScript dinamik tipli bir dil olduğundan, değişkenler herhangi bir veri türünü tutabilir:
+JS dinamik dil, istediğin her türü tutabilir:
 
-String: Metinsel değerler ("Merhaba")
+String: "Merhaba" gibi metin
 
-Number: Sayısal değerler (42, 3.14)
+Number: 42, 3.14 gibi sayılar
 
-Boolean: Mantıksal değerler (true, false)
+Boolean: true veya false
 
-Array: Diziler ([1, 2, 3])
+Array: [1, 2, 3] gibi diziler
 
-Object: Nesneler ({ad: "Ali", yas: 30})
+Object: {ad: "Ali", yas: 30} gibi nesneler
 
 null: Boş değer
 
-undefined: Tanımlanmamış değer
+undefined: Tanımlanmamış
 
-Symbol: Benzersiz ve değiştirilemez değerler (ES6)
+Symbol: ES6’dan özel ve değiştirilemez değerler
 
-BigInt: Büyük tam sayılar (ES2020)
+BigInt: Çok büyük tam sayılar (ES2020)
 
 Değişken Kullanım Örnekleri
 javascript
 Kopyala
 Düzenle
-// Değişkenlerin değerlerini değiştirme
+// Değişkenlerin değerini değiştirmek
 let sayac = 0;
-sayac = sayac + 1; // veya sayac++
+sayac = sayac + 1;  // ya da sayac++;
 
-// const ile tanımlanan değişkenlerin değeri değiştirilemez
+// const ile sabit değişken tanımlanır, değeri değişmez
 const MAKSIMUM = 100;
-// MAKSIMUM = 200; // Hata verir!
+// MAKSIMUM = 200; // Hata verir, izin yok!
 
-// Ancak const ile tanımlanan nesnelerin özellikleri değiştirilebilir
+// Ama const ile tanımlanan nesnenin içi değiştirilebilir
 const kullanici = { ad: "Mehmet" };
-kullanici.ad = "Ali"; // Bu geçerlidir
-// kullanici = { ad: "Veli" }; // Bu geçerli değildir
+kullanici.ad = "Ali"; // Bu olur
+// kullanici = { ad: "Veli" }; // Bu olmaz, komple değiştirilemez
 
 // Birden fazla değişken tanımlama
 let a = 5, b = 10, c = 15;
@@ -92,27 +92,27 @@ Düzenle
 // var örneği - fonksiyon kapsamı
 function varOrnegi() {
   var x = 1;
-  
+
   if (true) {
-    var x = 2; // Aynı x değişkeni
+    var x = 2; // Aynı x değişkeni, üsttekini ezer
     console.log(x); // 2
   }
-  
-  console.log(x); // 2
+
+  console.log(x); // 2, blok dışından da erişilir
 }
 
 // let örneği - blok kapsamı
 function letOrnegi() {
   let y = 1;
-  
+
   if (true) {
-    let y = 2; // Farklı y değişkeni
+    let y = 2; // Bu farklı bir y değişkeni, sadece if içinde geçerli
     console.log(y); // 2
   }
-  
-  console.log(y); // 1
+
+  console.log(y); // 1, blok dışındaki y farklı
 }
 
 // const örneği
 const SABIT = 5;
-// SABIT = 10; // Hata!
+// SABIT = 10; // Hata verir, sabit değiştirilemez!
