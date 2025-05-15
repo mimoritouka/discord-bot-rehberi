@@ -1,54 +1,73 @@
-Şimdi kardeş sen bunları okuyunca en basit const görünce bu ne amk kanka oluyorsun o yüzden aşşağıya açıklamasını bırakıyorum
+# JavaScript Değişkenleri: Kapsamlı Rehber
 
-JavaScript Değişkenleri: Kapsamlı Rehber
 JavaScript'te değişkenler, verilerinizi depolamak ve yönetmek için kullanılan temel yapı taşlarıdır. Bu yazıda JavaScript değişkenleri hakkında bilmeniz gereken tüm temel bilgileri paylaşacağım.
-Değişken Tanımlama
+
+## Değişken Tanımlama
+
 JavaScript'te değişkenleri tanımlamak için üç farklı anahtar kelime kullanılabilir:
 
-var: Geleneksel değişken tanımlama yöntemi
-let: ES6 (ECMAScript 2015) ile gelen, blok kapsamlı değişkenler için
-const: Değeri değiştirilemeyen (sabit) değişkenler için
+- `var`: Geleneksel değişken tanımlama yöntemi  
+- `let`: ES6 (ECMAScript 2015) ile gelen, blok kapsamlı değişkenler için  
+- `const`: Değeri değiştirilemeyen (sabit) değişkenler için  
 
-javascriptvar yas = 25;
+```javascript
+var yas = 25;
 let isim = "Ahmet";
 const PI = 3.14;
 Değişken İsimlendirme Kuralları
-
 Değişken isimleri harf, alt çizgi (_) veya dolar işareti ($) ile başlamalıdır
+
 Rakamla başlayamaz
+
 Türkçe karakterler kullanılabilir ancak önerilmez
+
 JavaScript'in ayrılmış kelimeleri (if, for, while vb.) değişken ismi olarak kullanılamaz
+
 Büyük-küçük harf duyarlıdır (isim ve İsim farklı değişkenlerdir)
 
 Değişken Kapsamı (Scope)
 var ile Tanımlanan Değişkenler
-
 Fonksiyon kapsamına sahiptir
+
 Tanımlandığı fonksiyon içinde erişilebilir
-Blok kapsamı yoktur (if, for, while blokları içinde tanımlansa bile dışarıdan erişilebilir)
+
+Blok kapsamı yoktur (örneğin if, for, while blokları içinde tanımlansa bile dışarıdan erişilebilir)
+
 Değişken yükseltme (hoisting) özelliğine sahiptir
 
 let ve const ile Tanımlanan Değişkenler
-
 Blok kapsamına sahiptir
+
 Sadece tanımlandıkları blok içinde erişilebilir
+
 Değişken yükseltme özelliği yoktur (kullanmadan önce tanımlanmalıdır)
 
 Değişken Türleri
 JavaScript dinamik tipli bir dil olduğundan, değişkenler herhangi bir veri türünü tutabilir:
 
 String: Metinsel değerler ("Merhaba")
+
 Number: Sayısal değerler (42, 3.14)
+
 Boolean: Mantıksal değerler (true, false)
+
 Array: Diziler ([1, 2, 3])
+
 Object: Nesneler ({ad: "Ali", yas: 30})
+
 null: Boş değer
+
 undefined: Tanımlanmamış değer
+
 Symbol: Benzersiz ve değiştirilemez değerler (ES6)
+
 BigInt: Büyük tam sayılar (ES2020)
 
 Değişken Kullanım Örnekleri
-javascript// Değişkenlerin değerlerini değiştirme
+javascript
+Kopyala
+Düzenle
+// Değişkenlerin değerlerini değiştirme
 let sayac = 0;
 sayac = sayac + 1; // veya sayac++
 
@@ -66,10 +85,11 @@ let a = 5, b = 10, c = 15;
 
 // Değer atamadan değişken tanımlama
 let sonuc;
-
-
 let, var ve const Arasındaki Farklar
-javascript// var örneği - fonksiyon kapsamı
+javascript
+Kopyala
+Düzenle
+// var örneği - fonksiyon kapsamı
 function varOrnegi() {
   var x = 1;
   
@@ -96,4 +116,3 @@ function letOrnegi() {
 // const örneği
 const SABIT = 5;
 // SABIT = 10; // Hata!
-
